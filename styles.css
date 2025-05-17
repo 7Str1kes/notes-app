@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #333;
+  color: #eee;
+  min-width: 0;
+}
+
+.app-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 280px;
+  background-color: #222;
+  color: #f5d742;
+  display: flex;
+  flex-direction: column;
+  border-right: 3px solid #f5d742;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1rem;
+  border-bottom: 2px solid #444;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+#btn-new-note {
+  background: #f5d742;
+  border: none;
+  color: #222;
+  font-size: 1.8rem;
+  cursor: pointer;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(245, 215, 66, 0.6);
+}
+
+#btn-new-note:hover {
+  background: #d4be31;
+  box-shadow: 0 3px 8px rgba(212, 190, 49, 0.9);
+}
+
+#notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #f5d742 #222;
+}
+
+#notes-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+#notes-list::-webkit-scrollbar-track {
+  background: #222;
+}
+
+#notes-list::-webkit-scrollbar-thumb {
+  background-color: #f5d742;
+  border-radius: 4px;
+}
+
+#notes-list li {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#notes-list li:hover {
+  background-color: #f5d742;
+  color: #222;
+}
+
+#notes-list li.active {
+  background-color: #d4be31;
+  color: #222;
+  font-weight: 700;
+}
+
+.editor {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+  background-color: #2a2a2a;
+  color: #eee;
+}
+
+#note-title {
+  font-size: 2rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #444;
+  color: #f5d742;
+  outline: none;
+  box-shadow: 0 0 6px rgba(245, 215, 66, 0.8);
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#note-title:focus {
+  background-color: #555;
+}
+
+#note-content {
+  flex-grow: 1;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  resize: none;
+  outline: none;
+  background-color: #444;
+  color: #eee;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#note-content:focus {
+  background-color: #555;
+}
+
+.save-info {
+  font-size: 0.9rem;
+  color: #f5d742;
+  margin-top: 0.75rem;
+  text-align: right;
+  user-select: none;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
